@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "brainfuckrb"
+
+abort "No input" if ARGV.count < 1
+abort "Input file not found" if not File.exist? ARGV[0]
+abort "Input is not a file" if not File.file? ARGV[0]
+
+File.open(ARGV[0], "r") do |file|
+  Brainfuckrb::Brainfuck.new(file.read).run
+end
