@@ -6,7 +6,8 @@ Gem::Specification.new do |gem|
   gem.email         = ["luka.dornhecker@gmail.com"]
   gem.description   = %q{Brainfuck implementation in Ruby}
   gem.summary       = %q{Brainfuck implementation in Ruby}
-  gem.homepage      = ""
+  gem.homepage      = "http://lukad.github.com/brainfuckrb"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
