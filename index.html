@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Brainfuckrb by lukad</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Brainfuckrb</h1>
+        <h2>Brainfuck interpreter implemented in Ruby</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/lukad/brainfuckrb/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/lukad/brainfuckrb/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/lukad/brainfuckrb" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h2>Installation</h2>
+
+<p>Isntall it with RubyGems:</p>
+
+<pre><code>$ gem install brainfuckrb
+</code></pre>
+
+<h2>Usage</h2>
+
+<div class="highlight"><pre><span class="c1">#!/usr/bin/env ruby</span>
+<span class="c1"># hello_brainfuck.rb</span>
+
+<span class="n">hello_brainfuck</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">eos</span>
+<span class="sh">  ++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++</span>
+<span class="sh">  ++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;.</span>
+<span class="no">eos</span>
+<span class="n">bf</span> <span class="o">=</span> <span class="no">Brainfuckrb</span><span class="o">::</span><span class="no">Brainfuck</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">hello_brainfuck</span><span class="p">)</span>
+<span class="n">bf</span><span class="o">.</span><span class="n">run</span>
+</pre></div>
+
+<pre><code>$ ./hello_brainfuck.rb
+Hello World!
+</code></pre>
+
+<p>Or run brainfuck programs directly:</p>
+
+<pre><code>$ cat hello.bf
++++++ +++++             initialize counter (cell #0) to 10
+[                       in loop set the next four cells to 70/100/30/10
+    &gt; +++++ ++          add  7 to cell #1
+    &gt; +++++ +++++       add 10 to cell #2
+    &gt; +++               add  3 to cell #3
+    &gt; +                 add  1 to cell #4
+    &lt;&lt;&lt;&lt; -              decrement counter (cell #0)
+]
+&gt; ++ .                  print 'H'
+&gt; + .                   print 'e'
++++++ ++ .              print 'l'
+.                       print 'l'
++++ .                   print 'o'
+&gt; ++ .                  print ' '
+&lt;&lt; +++++ +++++ +++++ .  print 'W'
+&gt; .                     print 'o'
++++ .                   print 'r'
+----- - .               print 'l'
+----- --- .             print 'd'
+&gt; + .                   print '!'
+&gt; .                     print '\n'
+
+$ brainfuckrb hello.bf
+Hello World!
+</code></pre>
+
+<p>Only the brainfuck control characters <code>&gt;&lt;+-.,[]</code> are interpreted.
+Others will be ignored.</p>
+
+<h2>Known bugs</h2>
+
+<ul>
+<li>Input does not work</li>
+</ul><h2>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Added some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-33689187-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
