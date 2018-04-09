@@ -1,0 +1,8 @@
+title: Brainfuckrb
+description: Brainfuck interpreter implemented in Ruby
+google_analytics: UA-41977265-1
+show_downloads: true
+theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-mentions
